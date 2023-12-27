@@ -163,9 +163,9 @@ void tm_play_snake(tm_conn_t *tm, snake_t *snake, tm_brightness_t brightness, st
 
     while (1)
     {
-        if (k_sem_take(sem, K_MSEC(1)) != 0)
+        if (k_sem_take(sem, K_MSEC(500)) != 0)
             continue;
-            
+
         k_sem_give(sem);
 
         if (i == snake->frames)
@@ -184,6 +184,6 @@ void tm_play_snake(tm_conn_t *tm, snake_t *snake, tm_brightness_t brightness, st
         tm_set_brightnes(tm, tm_bright_full);
 
         i++;
-        k_msleep(40);
+        k_msleep(snake->delay);
     }
 }

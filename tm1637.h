@@ -68,6 +68,7 @@ typedef struct
     bit_pos_t *variant;
     size_t frames;
     size_t tail_length;
+    size_t delay;
 } snake_t;
 
 #define SNAKE_FRAMES 12
